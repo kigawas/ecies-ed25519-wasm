@@ -3,3 +3,7 @@ ecies
 wasm
 NONINFRINGEMENT
 bindgen
+ecc
+md
+cdylib
+rlib
