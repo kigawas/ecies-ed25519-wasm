@@ -1,0 +1,36 @@
+[package]
+name = "ecies-ed25519-wasm"
+version = "0.0.1"
+# docs
+authors = ["Weiliang Li <to.be.impressive@gmail.com>"]
+description = "A WASM binding for ecies-ed25519"
+edition = "2018"
+keywords = [
+  "ed25519",
+  "crypto",
+  "ecc",
+  "ecies",
+]
+license = "MIT"
+readme = "README.md"
+# links
+documentation = "https://www.npmjs.com/package/ecies-ed25519-wasm/"
+homepage = "https://kigawas.me/ecies-ed25519-wasm/"
+repository = "https://github.com/kigawas/ecies-ed25519-wasm"
+
+[dependencies]
+ecies-ed25519 = {version = "0.5.0", default-features = false, features = ["pure_rust"]}
+rand = {version = "0.7.3", features = ["wasm-bindgen"]}
+
+# wasm
+js-sys = "0.3.46"
+wasm-bindgen = "0.2.69"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.19"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+lto = true
